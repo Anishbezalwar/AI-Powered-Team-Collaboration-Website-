@@ -1,0 +1,33 @@
+{
+  "name": "unified-enterprise-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unified Enterprise Workspace: Jira + Lark + Notion-class Multi-Tenant SaaS with Enterprise Auth & Security",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"API,WEB\" -c \"cyan,magenta\" \"npm run dev --workspace=apps/api\" \"npm run dev --workspace=apps/web\"",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspace=apps/api",
+    "seed": "npm run seed --workspace=apps/api",
+    "start": "npm run start --workspace=apps/api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "enterprise-saas",
+    "multi-tenant",
+    "jira",
+    "lark",
+    "notion",
+    "rbac",
+    "row-level-security",
+    "totp-mfa",
+    "audit-log"
+  ],
+  "author": "Unified Workspace Architect",
+  "license": "UNLICENSED"
+}
